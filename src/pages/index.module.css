@@ -1,0 +1,76 @@
+/* Stili della sola homepage. */
+
+.copertina {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  background: linear-gradient(
+    160deg,
+    var(--ifm-color-primary-darkest) 0%,
+    var(--ifm-color-primary) 55%,
+    var(--ifm-color-primary-light) 100%
+  );
+  color: #fff;
+}
+
+.titolo {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.slogan {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 46rem;
+  margin: 0 auto 2rem;
+  opacity: 0.92;
+}
+
+.azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.caratteristiche {
+  padding: 3.5rem 0;
+}
+
+.colonna {
+  margin-bottom: 1.5rem;
+}
+
+.scheda {
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.scheda:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+}
+
+.schedaTitolo {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.schedaTesto {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scheda {
+    transition: none;
+  }
+  .scheda:hover {
+    transform: none;
+  }
+}

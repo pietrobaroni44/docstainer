@@ -1,0 +1,9 @@
+rilascio:
+  label: Rilascio
+  permalink: /rilascio
+  description: Note di rilascio e cambiamenti della documentazione.
+
+metodo:
+  label: Metodo
+  permalink: /metodo
+  description: Come e perché la documentazione è organizzata così.

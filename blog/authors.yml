@@ -1,0 +1,7 @@
+# Autori del blog. Riferisci un autore da un articolo con:
+#   authors: [redazione]
+redazione:
+  name: Redazione
+  title: Curatori della documentazione
+  page: false
+  socials: {}

@@ -1,0 +1,31 @@
+# Due servizi, due scopi.
+#   docker compose up dev                          -> sviluppo su :3000
+#   docker compose --profile prod up site --build   -> sito servito da nginx su :8080
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Il progetto è montato dall'host: modifichi un .md e la pagina si ricarica.
+      - .:/app
+      # ...tranne node_modules, che resta quello installato dentro l'immagine.
+      - /app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    stdin_open: true
+    tty: true
+
+  site:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: site
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    profiles: ["prod"]

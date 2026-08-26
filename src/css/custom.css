@@ -1,0 +1,80 @@
+/* Stile del sito.
+ *
+ * I colori sono definiti come variabili Infima: cambia il colore primario qui
+ * sotto e cambia tutto il sito (link, pulsanti, barra di navigazione, copertina).
+ * Per generare una scala coerente da un colore di partenza:
+ * https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima
+ */
+
+/* Formule matematiche: caricato dai file locali del pacchetto, non dalla rete,
+ * così le formule si vedono anche senza connessione. Se togli KaTeX dal
+ * progetto, cancella questa riga. */
+@import "katex/dist/katex.min.css";
+
+/* ---------------------------------------------------------------------------
+   Tema chiaro
+   --------------------------------------------------------------------------- */
+:root {
+  --ifm-color-primary: #0f766d;
+  --ifm-color-primary-dark: #0e6a62;
+  --ifm-color-primary-darker: #0d645d;
+  --ifm-color-primary-darkest: #0b524c;
+  --ifm-color-primary-light: #11847a;
+  --ifm-color-primary-lighter: #128b81;
+  --ifm-color-primary-lightest: #15a095;
+
+  --ifm-code-font-size: 92%;
+  --ifm-global-radius: 8px;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------------------------------
+   Tema scuro
+   --------------------------------------------------------------------------- */
+[data-theme='dark'] {
+  --ifm-color-primary: #45d3c5;
+  --ifm-color-primary-dark: #30ccbd;
+  --ifm-color-primary-darker: #2dc1b2;
+  --ifm-color-primary-darkest: #259f93;
+  --ifm-color-primary-light: #60dace;
+  --ifm-color-primary-lighter: #6eddd2;
+  --ifm-color-primary-lightest: #97e7df;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------------------------------------------------------------------
+   Ritocchi di leggibilità
+   --------------------------------------------------------------------------- */
+
+/* Il corpo del testo di una pagina di documentazione: righe più arieggiate. */
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 2.4;
+  line-height: 1.7;
+}
+
+/* Tabelle a piena larghezza: le tabelle strette con molte colonne sono
+   illeggibili su schermi piccoli. */
+.markdown table {
+  display: table;
+  width: 100%;
+}
+
+/* Le tabelle larghe scorrono da sole invece di sfondare il layout. */
+.markdown .table-wrapper {
+  overflow-x: auto;
+}
+
+/* I diagrammi Mermaid restano centrati e non sbordano. */
+.docusaurus-mermaid-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+/* Le formule a blocco possono scorrere in orizzontale su mobile. */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
