@@ -1,10 +1,10 @@
 {
   "label": "Operazioni",
-  "position": 4,
+  "position": 6,
   "collapsed": false,
   "link": {
     "type": "generated-index",
     "title": "Operazioni",
-    "description": "Adattare lo stampino a un nuovo progetto, eseguirlo in container e pubblicarlo."
+    "description": "Adattare il template a un nuovo progetto, eseguirlo in container e pubblicarlo."
   }
 }

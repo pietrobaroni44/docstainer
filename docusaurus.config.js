@@ -8,12 +8,12 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 // ---------------------------------------------------------------------------
-// 1. DA PERSONALIZZARE quando riusi questo stampino
+// 1. DA PERSONALIZZARE quando riusi questo template
 //    Nella maggior parte dei casi basta cambiare i valori qui sotto.
 // ---------------------------------------------------------------------------
 const progetto = {
   titolo: 'Docstainer',
-  slogan: 'Stampino di documentazione: Markdown semplice, Docusaurus, Docker.',
+  slogan: 'Template di documentazione: Markdown semplice, Docusaurus, Docker.',
   descrizione:
     'Punto di partenza riutilizzabile per scrivere documentazione in Markdown ' +
     'portabile, con ricerca offline, diagrammi e formule.',
@@ -94,7 +94,7 @@ const config = {
           // La cartella docs/ è la versione corrente ed è quella pubblicata.
           // Per congelare una release:
           //   docker compose run --rm dev npm run docusaurus docs:version 1.0
-          // Vedi docs/guida/versioni.md per la procedura completa.
+          // Vedi docs/guida-rapida/versioni.md per la procedura completa.
           includeCurrentVersion: true,
           lastVersion: 'current',
           versions: {
@@ -209,15 +209,15 @@ const config = {
             title: 'Documentazione',
             items: [
               {label: 'Introduzione', to: '/docs'},
-              {label: 'Guida rapida', to: '/docs/guida/installazione'},
-              {label: 'Sintassi Markdown', to: '/docs/sintassi/base'},
+              {label: 'Avvio', to: '/docs/guida-rapida/avvio'},
+              {label: 'Sintassi Markdown', to: '/docs/guida-rapida/sintassi/base'},
             ],
           },
           {
             title: 'Operazioni',
             items: [
-              {label: 'Docker', to: '/docs/operazioni/docker'},
-              {label: 'Pubblicazione', to: '/docs/operazioni/pubblicazione'},
+              {label: 'Docker', to: '/docs/guida-rapida/operazioni/docker'},
+              {label: 'Pubblicazione', to: '/docs/guida-rapida/operazioni/pubblicazione'},
               {label: 'Novità', to: '/blog'},
             ],
           },

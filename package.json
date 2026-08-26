@@ -1,7 +1,7 @@
 {
   "name": "docstainer",
   "version": "1.0.0",
-  "description": "Stampino di documentazione Docusaurus: Markdown portabile, ricerca offline, diagrammi, formule e Docker.",
+  "description": "Template di documentazione Docusaurus: Markdown portabile, ricerca offline, diagrammi, formule e Docker.",
   "license": "MIT",
   "keywords": [
     "docusaurus",

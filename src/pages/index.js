@@ -11,7 +11,7 @@ import styles from './index.module.css';
 // ---------------------------------------------------------------------------
 const copertina = {
   azionePrimaria: {testo: 'Inizia da qui', percorso: '/docs'},
-  azioneSecondaria: {testo: 'Come si scrive una pagina', percorso: '/docs/guida/scrivere-una-pagina'},
+  azioneSecondaria: {testo: 'Come si scrive una pagina', percorso: '/docs/guida-rapida/scrivere-una-pagina'},
 };
 
 const caratteristiche = [

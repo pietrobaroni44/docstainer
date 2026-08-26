@@ -53,7 +53,7 @@ funziona lo stesso, il titolo viene dedotto dal primo `#`.
 2. **Nomi di file in minuscolo con i trattini.** `backup-e-ripristino.md`
    diventa l'URL `.../backup-e-ripristino`, prevedibile e citabile.
 3. **Link relativi tra documenti.** Scrivi
-   `[installazione](installazione.md)`, non l'URL completo: così il link
+   `[installazione](avvio.md)`, non l'URL completo: così il link
    funziona sia sul sito sia aprendo il file in un editor.
 4. **Immagini in `static/img/`.** Le richiami come `![alt](/img/schema.png)`.
 
@@ -68,7 +68,7 @@ Il file va messo in `static/img/schema-rete.png`. Tutto cio che sta in
 
 :::tip Preferisci un diagramma a uno screenshot
 Uno screenshot invecchia e non si può correggere. Un
-[diagramma Mermaid](../sintassi/diagrammi.md) è testo: si legge nel diff, si
+[diagramma Mermaid](sintassi/diagrammi.md) è testo: si legge nel diff, si
 corregge in dieci secondi e non pesa nulla nel repository.
 :::
 

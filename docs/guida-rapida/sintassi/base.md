@@ -48,7 +48,7 @@ Testo normale, **grassetto**, *corsivo*, `codice inline`, ~~barrato~~.
 ## Link
 
 ```markdown
-[Un altro documento](../guida/installazione.md)
+[Un altro documento](../avvio.md)
 [Un sito esterno](https://docusaurus.io)
 <https://esempio.org>
 ```

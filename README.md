@@ -1,6 +1,6 @@
 # Docstainer
 
-**Stampino di documentazione che gira solo in container.** Prendilo, cambia
+**Template di documentazione che gira solo in container.** Prendilo, cambia
 quattro valori, scrivi Markdown.
 
 Sulla tua macchina serve **Docker e nient'altro**: niente Node, niente npm,
@@ -24,30 +24,50 @@ docker compose version
 Non ti serve altro. Se hai Node installato per altri motivi, questo progetto non
 lo usa e non lo tocca.
 
-## Prendilo
+## Da zero a sito, in un blocco solo
 
-**Dalla pagina GitHub**, senza installare niente: **Use this template → Create a
-new repository**, oppure **Code → Download ZIP** se vuoi solo i file.
-
-Da riga di comando, se hai `git`:
+Sostituisci `TUO-UTENTE/TUO-REPO` con il repository vuoto che hai creato su
+GitHub, poi incolla tutto:
 
 ```bash
 git clone --depth 1 https://github.com/pietrobaroni44/docstainer.git la-mia-documentazione
-```
-
-```bash
 rm -rf la-mia-documentazione/.git
+cd la-mia-documentazione
+git init -b main
+git remote add origin git@github.com:TUO-UTENTE/TUO-REPO.git
+git add .
+git commit -m "Primo commit: parto da docstainer"
+git push -u origin main
+docker compose up dev
 ```
 
-Il secondo comando stacca lo stampino dalla sua cronologia: da lì in poi il
-progetto è tuo. Se non vuoi nemmeno `git` sulla macchina, usalo dentro un
-container:
+Riga per riga: scarichi il template, ne stacchi la cronologia (da qui in poi il
+progetto è tuo e non ha più niente a che vedere con questo repository), crei un
+repository git nuovo, lo colleghi al tuo, pubblichi il primo commit e avvii il
+sito su <http://localhost:3000>.
+
+> Il `git push` funziona se il repository remoto è **vuoto**. Se lo hai creato
+> con un README o una licenza, allinealo prima con
+> `git pull --rebase origin main`, oppure ricrealo senza file iniziali.
+
+Se il repository su GitHub non ti serve, salta le quattro righe da `git init` a
+`git push`: il template funziona benissimo anche come cartella locale.
+
+## Altri modi per prenderlo
+
+**Dalla pagina GitHub**, senza toccare il terminale: **Use this template →
+Create a new repository**, oppure **Code → Download ZIP** se vuoi solo i file.
+
+**Senza `git` sulla macchina**, usandolo dentro un container come tutto il
+resto:
 
 ```bash
 docker run --rm -v "$PWD:/git" alpine/git clone --depth 1 https://github.com/pietrobaroni44/docstainer.git la-mia-documentazione
 ```
 
 ## Avvialo
+
+Il comando di tutti i giorni, dalla cartella del progetto:
 
 ```bash
 docker compose up dev
@@ -114,9 +134,12 @@ const progetto = {
 
 **2. Il nome del pacchetto.** In `package.json`, campo `name`.
 
-**3. I contenuti.** Svuota `docs/` e `blog/` e scrivi i tuoi. Tieni
-`docs/intro.md`: il suo `slug: /` fa in modo che `/docs` risponda sempre a
-qualcosa.
+**3. I contenuti.** I tuoi documenti vanno direttamente in `docs/`, accanto
+alla cartella `guida-rapida/`. Quella contiene la documentazione del template
+stesso: quando non ti serve più, cancellala tutta in un colpo solo.
+
+Se la cancelli, sposta `slug: /` nel frontmatter di una tua pagina, altrimenti
+`/docs` non risponde più a niente e la build fallisce.
 
 **4. L'aspetto.** Il colore primario è una variabile in cima a
 `src/css/custom.css`. Logo e favicon stanno in `static/img/`: sostituisci
@@ -126,8 +149,8 @@ qualcosa.
 testi sono in un array in cima. Se una homepage non ti serve, cancellalo
 insieme a `index.module.css` e `/` mostrerà direttamente la documentazione.
 
-Le pagine sotto `docs/sintassi/` puoi tenerle: fanno da promemoria per chi
-scriverà dopo di te.
+Finché ci sono, le pagine sotto `docs/guida-rapida/sintassi/` fanno da
+promemoria di sintassi per chi scriverà dopo di te.
 
 ## Aggiungere una dipendenza
 
@@ -162,6 +185,7 @@ docker compose up dev --build
 ```text
 .
 ├── docs/                  la documentazione (è qui che scrivi)
+│   └── guida-rapida/      la documentazione del template, cancellabile in blocco
 ├── blog/                  note di rilascio e aggiornamenti
 ├── src/
 │   ├── css/custom.css     colori e stile del sito

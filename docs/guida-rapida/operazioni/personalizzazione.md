@@ -1,10 +1,10 @@
 ---
-title: Personalizzare lo stampino
+title: Personalizzare il template
 sidebar_position: 1
 description: La lista di cose da cambiare quando riusi Docstainer per un nuovo progetto.
 ---
 
-# Personalizzare lo stampino
+# Personalizzare il template
 
 Hai copiato la cartella e vuoi farla diventare la documentazione di un altro
 progetto. Sono cinque minuti.
@@ -45,12 +45,22 @@ effetti sul sito, ma evita confusione fra cartelle.
 
 ## 3. Contenuti
 
-Svuota `docs/` e `blog/` e scrivi i tuoi. Tieni `docs/intro.md` come pagina di
-apertura: il suo `slug: /` fa in modo che `/docs` risponda sempre a qualcosa.
+I tuoi documenti vanno direttamente in `docs/`, accanto alla cartella
+`guida-rapida/`. Quest'ultima contiene la documentazione del template stesso ed
+è pensata per essere cancellata in blocco quando non ti serve più:
 
-Le pagine di `docs/sintassi/` puoi conservarle: fanno da promemoria per chi
-scriverà dopo di te. Se ti danno fastidio, cancella la cartella e togli i
-riferimenti da `docs/intro.md`.
+```bash
+rm -rf docs/guida-rapida
+```
+
+Occhio a una cosa: la pagina `docs/guida-rapida/intro.md` ha `slug: /` nel
+frontmatter, ed è quella che risponde all'indirizzo `/docs`. Se cancelli la
+cartella, sposta quel `slug: /` nel frontmatter di una tua pagina, altrimenti
+`/docs` non porta da nessuna parte e la build fallisce per via di
+`onBrokenLinks: 'throw'`.
+
+Le pagine di `docs/guida-rapida/sintassi/` puoi conservarle a parte: fanno da
+promemoria di sintassi per chi scriverà dopo di te.
 
 ## 4. Aspetto
 
@@ -95,7 +105,7 @@ tenere in `code.json` solo le voci che ti servono davvero e cancellare il resto.
 | Il blog | Cancella `blog/`, metti `blog: false` nel preset e togli la voce "Novità" da `navbar` e `footer` |
 | Le formule | Togli `remarkMath` / `rehypeKatex` dal preset e la riga `@import` di KaTeX in `src/css/custom.css` |
 | I diagrammi | Togli `@docusaurus/theme-mermaid` da `themes` e `mermaid: true` da `markdown` |
-| Il versionamento | Vedi [Versionare la documentazione](../guida/versioni.md) |
+| Il versionamento | Vedi [Versionare la documentazione](../versioni.md) |
 | Docker | Cancella `docker/`, `docker-compose.yml` e `.dockerignore` |
 
 Dopo ogni rimozione conviene lanciare una build: se hai lasciato un

@@ -4,12 +4,12 @@ title: Introduzione
 sidebar_label: Introduzione
 sidebar_position: 1
 slug: /
-description: Cos'è Docstainer, cosa contiene e come riusarlo come stampino.
+description: Cos'è Docstainer, cosa contiene e come riusarlo come template.
 ---
 
 # Docstainer
 
-**Docstainer** è uno stampino (template) di documentazione pronto da copiare.
+**Docstainer** è un template di documentazione pronto da copiare.
 L'idea è semplice: quando ti serve documentare un progetto, duplichi questa
 cartella, cambi quattro valori nella configurazione e inizi a scrivere Markdown.
 
@@ -34,10 +34,10 @@ e quando smetti di usarlo non resta nulla sparso in giro.
 
 ## Da dove iniziare
 
-1. [Avvio](guida/installazione.md) - far partire il sito con un comando solo.
-2. [Scrivere una pagina](guida/scrivere-una-pagina.md) - la struttura minima di un documento.
-3. [Organizzare le sezioni](guida/organizzare-le-sezioni.md) - cartelle, ordine e menu laterale.
-4. [Personalizzare lo stampino](operazioni/personalizzazione.md) - cosa cambiare al primo riuso.
+1. [Avvio](avvio.md) - far partire il sito con un comando solo.
+2. [Scrivere una pagina](scrivere-una-pagina.md) - la struttura minima di un documento.
+3. [Organizzare le sezioni](organizzare-le-sezioni.md) - cartelle, ordine e menu laterale.
+4. [Personalizzare il template](operazioni/personalizzazione.md) - cosa cambiare al primo riuso.
 
 :::tip Regola pratica
 Se una modifica ti costringe a toccare più di un file di configurazione,
@@ -50,10 +50,7 @@ per restare noioso e prevedibile.
 ```text
 docstainer/
 ├── docs/                  <- la documentazione (è qui che scrivi)
-│   ├── intro.md
-│   ├── guida/
-│   ├── sintassi/
-│   └── operazioni/
+│   └── guida-rapida/      <- queste pagine: cancellabili in blocco
 ├── blog/                  <- note di rilascio e aggiornamenti
 ├── src/
 │   ├── css/custom.css     <- colori e stile del sito

@@ -1,0 +1,9 @@
+{
+  "label": "Guida Rapida",
+  "position": 1,
+  "collapsed": false,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  }
+}
